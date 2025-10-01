@@ -1,0 +1,73 @@
+{
+  "database_id": 12,
+  "scale_factor": 82,
+  "database_byte_count": 82000000000,
+  "size_bucket": 11,
+  "pattern_id": 3,
+  "cpu_time": 77919534,
+  "cpu_time_h":"0.0216443h",
+  "query_count": 15,
+  "queries": [
+    {
+      "query_id": 20,
+      "start": 2830785,
+      "arguments": ["white","1995-01-01","EGYPT"]
+    },{
+      "query_id": 16,
+      "start": 2867927,
+      "arguments": ["Brand#53","STANDARD PLATED",15,45,13,42,5,22,24,9]
+    },{
+      "query_id": 8,
+      "start": 2896004,
+      "arguments": ["ARGENTINA","AMERICA","LARGE ANODIZED BRASS"]
+    },{
+      "query_id": 7,
+      "start": 2937913,
+      "arguments": ["INDONESIA","VIETNAM"]
+    },{
+      "query_id": 7,
+      "start": 2975995,
+      "arguments": ["JAPAN","RUSSIA"]
+    },{
+      "query_id": 8,
+      "start": 2996982,
+      "arguments": ["PERU","AMERICA","PROMO POLISHED TIN"]
+    },{
+      "query_id": 22,
+      "start": 3044304,
+      "arguments": [29,24,34,21,22,10,12]
+    },{
+      "query_id": 19,
+      "start": 3062328,
+      "arguments": ["Brand#52","Brand#11","Brand#52",2,20,25]
+    },{
+      "query_id": 17,
+      "start": 3124780,
+      "arguments": ["Brand#54","MED BAG"]
+    },{
+      "query_id": 3,
+      "start": 3201490,
+      "arguments": ["MACHINERY","1995-03-17"]
+    },{
+      "query_id": 8,
+      "start": 3237584,
+      "arguments": ["UNITED KINGDOM","EUROPE","ECONOMY ANODIZED NICKEL"]
+    },{
+      "query_id": 16,
+      "start": 3249251,
+      "arguments": ["Brand#52","PROMO PLATED",47,24,14,4,10,3,42,46]
+    },{
+      "query_id": 1,
+      "start": 3298425,
+      "arguments": [81]
+    },{
+      "query_id": 2,
+      "start": 3315462,
+      "arguments": [5,"BRASS","EUROPE"]
+    },{
+      "query_id": 9,
+      "start": 3378623,
+      "arguments": ["red"]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+database_type: duckdb
+#database_path: "/data/benchmark/analytics.duckdb" # Database path when you want to run the benchmark against a single database
+base_database_path: "/home/michalis/Documents/UofT/MSRG/CloudDB_discussion/benchmarks/cab-main/benchmark_executor/data/duckdb/tpch/cab_tpch" # Base database name for all the databases that will be created for the different streams
+template_path: "/home/michalis/Documents/UofT/MSRG/CloudDB_discussion/benchmarks/cab-main/benchmark_executor/databases/queries/duckdb"
+concurrency: 10
+schema_directory: "schemas/"
+#memory_limit: "16GB"
+#threads: 8
+
+# DuckDB-specific optimizations
+#duckdb_settings:
+ # enable_progress_bar: false
+ # enable_profiling: true
+  #profiling_output: "/data/benchmark/profiles/"
+
+dbgen_path: "benchmarks/tpch/tpch-dbgen/dbgen"

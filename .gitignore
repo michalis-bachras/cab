@@ -1,0 +1,36 @@
+# Build directories
+cmake-build-*/
+build/
+out/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Compiled object files
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+benchmark_executor/data/duckdb/
+benchmark_executor/data/**/*.db
+benchmark_executor/data/**/*.duckdb
+!benchmark_executor/data/**/*.py

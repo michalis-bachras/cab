@@ -1,0 +1,161 @@
+{
+  "database_id": 7,
+  "scale_factor": 17,
+  "database_byte_count": 17000000000,
+  "size_bucket": 10,
+  "pattern_id": 3,
+  "cpu_time": 179441252,
+  "cpu_time_h":"0.0498448h",
+  "query_count": 37,
+  "queries": [
+    {
+      "query_id": 13,
+      "start": 489940,
+      "arguments": ["express","packages"]
+    },{
+      "query_id": 16,
+      "start": 519287,
+      "arguments": ["Brand#34","ECONOMY ANODIZED",13,3,35,30,39,24,5,11]
+    },{
+      "query_id": 19,
+      "start": 530299,
+      "arguments": ["Brand#54","Brand#54","Brand#12",6,13,21]
+    },{
+      "query_id": 18,
+      "start": 562598,
+      "arguments": [314]
+    },{
+      "query_id": 15,
+      "start": 587841,
+      "arguments": ["1995-08-01"]
+    },{
+      "query_id": 4,
+      "start": 602467,
+      "arguments": ["1996-10-01"]
+    },{
+      "query_id": 9,
+      "start": 625010,
+      "arguments": ["lavender"]
+    },{
+      "query_id": 6,
+      "start": 659182,
+      "arguments": ["1997-01-01",9,25]
+    },{
+      "query_id": 2,
+      "start": 665287,
+      "arguments": [30,"COPPER","EUROPE"]
+    },{
+      "query_id": 12,
+      "start": 679799,
+      "arguments": ["REG AIR","RAIL","1996-01-01"]
+    },{
+      "query_id": 5,
+      "start": 690190,
+      "arguments": ["AFRICA","1994-01-01"]
+    },{
+      "query_id": 16,
+      "start": 702157,
+      "arguments": ["Brand#12","MEDIUM BURNISHED",30,50,25,11,46,29,33,7]
+    },{
+      "query_id": 22,
+      "start": 1134980,
+      "arguments": [24,10,15,23,32,34,33]
+    },{
+      "query_id": 3,
+      "start": 1139073,
+      "arguments": ["FURNITURE","1995-03-23"]
+    },{
+      "query_id": 2,
+      "start": 1182974,
+      "arguments": [36,"NICKEL","EUROPE"]
+    },{
+      "query_id": 19,
+      "start": 1185695,
+      "arguments": ["Brand#14","Brand#32","Brand#43",5,19,20]
+    },{
+      "query_id": 2,
+      "start": 1197032,
+      "arguments": [8,"COPPER","ASIA"]
+    },{
+      "query_id": 15,
+      "start": 1212736,
+      "arguments": ["1996-12-01"]
+    },{
+      "query_id": 22,
+      "start": 1223561,
+      "arguments": [14,30,31,18,26,33,32]
+    },{
+      "query_id": 23,
+      "start": 1559306,
+      "arguments": [101898016,102000032,0,7]
+    },{
+      "query_id": 6,
+      "start": 1589662,
+      "arguments": ["1996-01-01",2,25]
+    },{
+      "query_id": 3,
+      "start": 1610217,
+      "arguments": ["HOUSEHOLD","1995-03-30"]
+    },{
+      "query_id": 2,
+      "start": 1632458,
+      "arguments": [6,"COPPER","MIDDLE EAST"]
+    },{
+      "query_id": 2,
+      "start": 1671927,
+      "arguments": [32,"COPPER","AFRICA"]
+    },{
+      "query_id": 17,
+      "start": 1718607,
+      "arguments": ["Brand#21","LG PACK"]
+    },{
+      "query_id": 10,
+      "start": 2996847,
+      "arguments": ["1994-08-01"]
+    },{
+      "query_id": 21,
+      "start": 3048568,
+      "arguments": ["RUSSIA"]
+    },{
+      "query_id": 6,
+      "start": 3064641,
+      "arguments": ["1997-01-01",5,24]
+    },{
+      "query_id": 23,
+      "start": 3080564,
+      "arguments": [101796000,101898016,0,7]
+    },{
+      "query_id": 15,
+      "start": 3095197,
+      "arguments": ["1996-04-01"]
+    },{
+      "query_id": 12,
+      "start": 3101269,
+      "arguments": ["SHIP","FOB","1997-01-01"]
+    },{
+      "query_id": 11,
+      "start": 3103609,
+      "arguments": ["VIETNAM",17]
+    },{
+      "query_id": 2,
+      "start": 3165343,
+      "arguments": [24,"COPPER","AFRICA"]
+    },{
+      "query_id": 2,
+      "start": 3171075,
+      "arguments": [47,"TIN","AMERICA"]
+    },{
+      "query_id": 19,
+      "start": 3215019,
+      "arguments": ["Brand#55","Brand#33","Brand#43",3,12,29]
+    },{
+      "query_id": 5,
+      "start": 3242461,
+      "arguments": ["AFRICA","1996-01-01"]
+    },{
+      "query_id": 15,
+      "start": 3276189,
+      "arguments": ["1994-04-01"]
+    }
+  ]
+}

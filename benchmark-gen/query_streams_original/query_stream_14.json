@@ -1,0 +1,81 @@
+{
+  "database_id": 14,
+  "scale_factor": 155,
+  "database_byte_count": 155000000000,
+  "size_bucket": 11,
+  "pattern_id": 3,
+  "cpu_time": 240796709,
+  "cpu_time_h":"0.066888h",
+  "query_count": 17,
+  "queries": [
+    {
+      "query_id": 16,
+      "start": 926594,
+      "arguments": ["Brand#21","MEDIUM ANODIZED",5,12,38,13,46,47,24,44]
+    },{
+      "query_id": 20,
+      "start": 938608,
+      "arguments": ["slate","1996-01-01","INDIA"]
+    },{
+      "query_id": 8,
+      "start": 976979,
+      "arguments": ["ETHIOPIA","AFRICA","PROMO POLISHED COPPER"]
+    },{
+      "query_id": 23,
+      "start": 1019468,
+      "arguments": [929070016,930000032,0,7]
+    },{
+      "query_id": 23,
+      "start": 1058546,
+      "arguments": [928140000,929070016,0,7]
+    },{
+      "query_id": 23,
+      "start": 1104436,
+      "arguments": [927210016,928140000,0,7]
+    },{
+      "query_id": 9,
+      "start": 1131502,
+      "arguments": ["lavender"]
+    },{
+      "query_id": 20,
+      "start": 1152859,
+      "arguments": ["steel","1995-01-01","PERU"]
+    },{
+      "query_id": 23,
+      "start": 2709394,
+      "arguments": [926280000,927210016,0,7]
+    },{
+      "query_id": 12,
+      "start": 2738755,
+      "arguments": ["RAIL","FOB","1995-01-01"]
+    },{
+      "query_id": 10,
+      "start": 2786218,
+      "arguments": ["1994-02-01"]
+    },{
+      "query_id": 7,
+      "start": 2831181,
+      "arguments": ["ARGENTINA","ARGENTINA"]
+    },{
+      "query_id": 9,
+      "start": 2854674,
+      "arguments": ["coral"]
+    },{
+      "query_id": 17,
+      "start": 2896658,
+      "arguments": ["Brand#13","MED BAG"]
+    },{
+      "query_id": 11,
+      "start": 2916971,
+      "arguments": ["BRAZIL",155]
+    },{
+      "query_id": 9,
+      "start": 2973576,
+      "arguments": ["dim"]
+    },{
+      "query_id": 7,
+      "start": 3179479,
+      "arguments": ["CANADA","MOROCCO"]
+    }
+  ]
+}
