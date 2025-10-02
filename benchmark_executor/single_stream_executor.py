@@ -43,14 +43,20 @@ class SingleStreamExecutor:
 
 
     async def initialize(self):
-            logger.info(f"Initializing stream executor for: {self.stream_id}")
+        """
+        Initialize database handler and load stream definition.
+        This is called before provisioning the databases in the main process.
+        This is also called in each process, so each process gets its own connection pool.
+        """
 
-            self.database_handler = DatabaseFactory.create_handler(
-                database_type=self.database_type,
-                config=self.config,
-                stream_id = self.stream_id)
-            await self.database_handler.initialize_connection_pool(self.config)
-            await self._load_stream_definition()
+        logger.info(f"Initializing stream executor for: {self.stream_id}")
+
+        self.database_handler = DatabaseFactory.create_handler(
+            database_type=self.database_type,
+            config=self.config,
+            stream_id = self.stream_id)
+        await self.database_handler.initialize_connection_pool(self.config)
+        await self._load_stream_definition()
 
 
     async def _load_stream_definition(self) -> None:
@@ -59,6 +65,18 @@ class SingleStreamExecutor:
             async with aiofiles.open(self.stream_file_path,'r') as f:
                 content = await f.read()
                 self.stream_definition = json.loads(content)
+            # Filter refresh queries if configured
+            if not self.config.get('include_refresh_queries', False):
+                original_count = len(self.stream_definition['queries'])
+                self.stream_definition['queries'] = [
+                    q for q in self.stream_definition['queries']
+                    if q['query_id'] != 23
+                ]
+                filtered_count = original_count - len(self.stream_definition['queries'])
+
+                if filtered_count > 0:
+                    logger.info(f"Filtered out {filtered_count} query 23 executions "
+                                f"(include_refresh_queries=false)")
         except FileNotFoundError:
             logger.error(f"File {self.stream_file_path} not found.")
         except json.decoder.JSONDecodeError:
@@ -89,7 +107,7 @@ class SingleStreamExecutor:
 
         return load_result
 
-    def get_database_name(self, database_type: DatabaseType) -> str:
+    def get_database_name(self, database_type: DatabaseType) -> str: # Needs to go to the database handler
         """Generate a standardized database name for this stream."""
         return f"{database_type.value}_database_{self.stream_id}.db"
 
@@ -165,7 +183,6 @@ class SingleStreamExecutor:
                 except Exception as e:
                     logger.warning(f"Error closing database handler: {e}")
 
-            self._cleanup_temp_directory()
 
 
             return {

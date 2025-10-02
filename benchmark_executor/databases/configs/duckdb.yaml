@@ -4,6 +4,7 @@ base_database_path: "/home/michalis/Documents/UofT/MSRG/CloudDB_discussion/bench
 template_path: "/home/michalis/Documents/UofT/MSRG/CloudDB_discussion/benchmarks/cab-main/benchmark_executor/databases/queries/duckdb"
 concurrency: 10
 schema_directory: "schemas/"
+include_refresh_queries: false
 #memory_limit: "16GB"
 #threads: 8
 

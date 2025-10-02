@@ -72,7 +72,8 @@ async def main():
         logger.info(f"Starting multi-stream benchmark with {database_type_str}")
         logger.info(f"Each stream will load configuration from configs/{database_type_str}.yaml")
 
-        results = await executor.run_benchmark(query_streams)
+        #results = await executor.run_benchmark(query_streams)
+        results = await executor.run_benchmark_with_processes(query_streams)
 
 
     except Exception as e:
