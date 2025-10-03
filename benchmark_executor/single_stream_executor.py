@@ -129,23 +129,52 @@ class SingleStreamExecutor:
             await self.schema_manager.create_schema(database_handler=self.database_handler, database_type=self.database_type,stream_index=self.stream_id)
             logger.info("Generating TPC-H benchmark data...")
             temp_dir = self._setup_temp_directory()
-            generated_files = await self.data_generator.generate_all_tables(
-                self.stream_definition['scale_factor'], temp_dir
+            #generated_files = await self.data_generator.generate_all_tables(
+             #   self.stream_definition['scale_factor'], temp_dir
+            #)
+
+            generated_files_dict = await self.data_generator.generate_all_tables_parallel(
+                scale_factor=self.stream_definition['scale_factor'],
+                output_dir=temp_dir
             )
+
             logger.info("Loading data into database tables...")
             load_stats = {}
             total_rows = 0
 
-            for table_name, csv_file in generated_files.items():
-                load_result = await self._load_table_data(
-                    csv_file, table_name
-                )
-                load_stats[table_name] = {
-                    'row_count': load_result.row_count,
-                    'file_size': csv_file.stat().st_size,
+            async def load_table_chunks(table_name: str, chunk_files: list[Path]):
+                """Load all chunks of a table into the database"""
+                table_load_stats = {
+                    'chunks_loaded': 0,
+                    'total_rows': 0,
+                    'total_file_size': 0,
                     'table_name_in_db': table_name + "_" + str(self.stream_id)
                 }
-                total_rows += load_result.row_count
+
+                for chunk_file in chunk_files:
+                    logger.info(f"Loading {chunk_file.name} into {table_name}")
+                    load_result = await self._load_table_data(chunk_file, table_name)
+
+                    table_load_stats['chunks_loaded'] += 1
+                    table_load_stats['total_rows'] += load_result.row_count
+                    table_load_stats['total_file_size'] += chunk_file.stat().st_size
+                return table_name, table_load_stats
+
+            load_tasks = [
+                load_table_chunks(table_name, chunk_files)
+                for table_name, chunk_files in generated_files_dict.items()
+            ]
+
+            # Execute all loading tasks in parallel
+            load_results = await asyncio.gather(*load_tasks, return_exceptions=True)
+
+            for result in load_results:
+                if isinstance(result, Exception):
+                    raise result
+
+                table_name, stats = result
+                load_stats[table_name] = stats
+                total_rows += stats['total_rows']
 
             total_duration = time.time() - start_time
 
@@ -164,12 +193,10 @@ class SingleStreamExecutor:
                 },
                 'database_info': {
                     'database_name': self.get_database_name(database_type),
-                    'database_path': Path(self.config['base_database_path'] + str(self.stream_id)) ,
+                    'database_path': Path(self.config['base_database_path'] + str(self.stream_id)),
                     'table_naming_pattern': f"tablename_{self.stream_id}"
                 }
             }
-
-            return results
 
         except Exception as e:
             error_duration = time.time() - start_time
